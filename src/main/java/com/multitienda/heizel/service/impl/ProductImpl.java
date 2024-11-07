@@ -19,6 +19,8 @@ public class ProductImpl implements IProducto {
     public Producto save(Producto producto) {
         return productoDao.save(producto);
     }
+
+    @Transactional(readOnly = true)
     @Override
     public Producto findById(Integer id) {
         return productoDao.findById(id).orElse(null);
